@@ -25,15 +25,14 @@ const App = () => {
       <ToastContainer />
       {!loading && (!token
         ? <SigninPopUp />
-        : <>{!loading &&
-          <>
-            (<Navbar />
-            <Routes>
-              <Route path='/' element={<Home />} />
-              <Route path='/upload' element={<Upload />} />
-              <Route path='/library' element={<Library />} />
-              <Route path='/ai' element={<ChatBot />} />
-            </Routes>) </>}
+        : <>
+          <Navbar />
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/upload' element={<Upload />} />
+            <Route path='/library' element={<Library />} />
+            <Route path='/ai' element={<ChatBot />} />
+          </Routes>
         </>
       )}
     </div>
