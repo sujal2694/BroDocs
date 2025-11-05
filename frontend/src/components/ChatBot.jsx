@@ -1,0 +1,82 @@
+import React, { useContext } from 'react'
+import { StoreContext } from '../context/context';
+import { Link } from 'react-router-dom';
+
+const ChatBot = () => {
+    const { onSent, recentPrompt, result, loading, resultData, setInput, input } = useContext(StoreContext);
+
+    return (
+        <div className='h-[90vh] flex items-start flex-col w-[80vw] m-auto mt-[100px] '>
+            <Link to='/' className='w-full'><div className='w-full flex items-center gap-3 text-[16px] text-gray-500 mb-5'>
+                <i className='fa fa-arrow-left'></i>
+                <p>Back to Home</p>
+            </div></Link>
+
+            <div>
+                {!result
+                    ? <div className='w-[60vw] px-5 mt-[100px] '>
+                        <div className='w-full'>
+                            <div>
+                                <p className='text-7xl w-fit bg-gradient-to-r from-blue-500 via-indigo-500 to-orange-700 bg-clip-text text-transparent font-[600]'>Hello, User.</p>
+                                <p className='text-5xl w-fit text-gray-700/90 font-[600] mt-3'>How can I help you today?</p>
+                            </div>
+
+                            <div className='mt-[200px] w-full flex items-center justify-around gap-5'>
+                                <div className='w-[250px] bg-blue-400/10 h-[200px] p-5 rounded-[15px] text-[15px] relative'>
+                                    <p>Suggest beautiful places to see an on upcoming road trip</p>
+                                    <i className='absolute bottom-3 right-3 bg-gray-500/40 h-5 w-5 p-5 flex items-center justify-center rounded-full text-[16px] fa fa-compass'></i>
+                                </div>
+                                <div className='w-[250px] bg-blue-400/10 h-[200px] p-5 rounded-[15px] text-[15px] relative'>
+                                    <p>Briefly summarise this concept; urbon planning</p>
+                                    <i className='absolute bottom-3 right-3 bg-gray-500/40 h-5 w-5 p-5 flex items-center justify-center rounded-full text-[16px] fa fa-lightbulb'></i>
+                                </div>
+                                <div className='w-[250px] bg-blue-400/10 h-[200px] p-5 rounded-[15px] text-[15px] relative'>
+                                    <p>Brainstrom team bbonding activities for our work retreat</p>
+                                    <i className='absolute bottom-3 right-3 bg-gray-500/40 h-5 w-5 p-5 flex items-center justify-center rounded-full text-[16px] fa fa-message'></i>
+                                </div>
+                                <div className='w-[250px] bg-blue-400/10 h-[200px] p-5 rounded-[15px] text-[15px] relative'>
+                                    <p>Improve the readability of the following code</p>
+                                    <i className='absolute bottom-3 right-3 bg-gray-500/40 h-5 w-5 p-5 flex items-center justify-center rounded-full text-[16px] fa fa-code'></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    : <div>
+                        <div className='w-[70vw] m-auto'>
+                            <div className='my-[40px] w-full flex items-center justify-end'>
+                                <p className=' w-fit py-2 px-3 rounded-md que-animation '>{recentPrompt}</p>
+                            </div>
+                            {loading
+                                ? <>
+                                    <div>
+                                        <div className='loader'>
+                                            <hr className='dot' />
+                                            <hr className='dot' />
+                                            <hr className='dot' />
+                                        </div>
+                                    </div>
+                                </>
+                                : <div className='w-[90%] flex items-start flex-col gap-4'>
+                                    <i className='bx bxs-sparkles text-[30px] text-blue-400 p-2'></i>
+                                    <p className='mt-2 p-3 bg-gray-600/20 rounded-lg'>{resultData}</p>
+                                </div>
+                            }
+
+                        </div>
+                    </div>
+                }
+            </div>
+            <div className='w-[50%] m-auto mt-[50px] mb-10 sticky bottom-4 left-[25%] '>
+                <div className='w-full flex items-center gap-5 bg-gray-950/95 border-2 border-gray-500/30 rounded-md hover:border-blue-500/80 hover:shadow-[0_0_5px_1px_#73A4FF] shadow-[0_0_5px_1px_#9d9d9d] p-2 '>
+                    <input className='w-full h-[2vh] bg-transparent border-none pl-3 outline-none' type="text" onChange={(e) => setInput(e.target.value)} value={input} placeholder='Enter prompt here' />
+                    <button onClick={() => { onSent() }} className='bg-blue-400/80 px-3 py-2 text-[20px] rounded-lg hover:bg-blue-500/70 '>
+                        <i className='fa fa-paper-plane'></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+    )
+}
+
+export default ChatBot

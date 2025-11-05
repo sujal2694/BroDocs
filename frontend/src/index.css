@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-poppins: "poppins", sans-serif;
+  --font-jersey: "jersey 10", sans-serif;
+  --sign-in-background: #212529;
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--sign-in-background);
+  color: white;
+  font-family: var(--font-poppins);
+}
+
+h1 {
+  font-family: var(--font-jersey);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@layer utilities {
+  .loader {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+    background-color: #6e9bfd;
+    border-radius: 50%;
+    animation: loader-animation 1.4s infinite ease-in-out;
+  }
+
+  .dot:nth-child(1) {
+    animation-delay: 0s;
+  }
+
+  .dot:nth-child(2) {
+    animation-delay: 0.2s;
+  }
+
+  .dot:nth-child(3) {
+    animation-delay: 0.4s;
+  }
+
+  @keyframes loader-animation {
+
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+
+    50% {
+      opacity: 1;
+    }
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .que-animation{
+    border: none;
+    background-color: #6e9bfd;
+    background: linear-gradient(to right, #6e9bfd, #9b75f3, #6e9bfd);
+    background-size: 400px 50px;
+    animation: que-anim 3s infinite linear;
+  }
+
+  @keyframes que-anim {
+    0%{
+      background-position: -400px 0px;
+    }
+    100%{
+      background-position: 400px 0px;
+    }
+  }
+
+}
