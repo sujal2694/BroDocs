@@ -14,7 +14,7 @@ const App = () => {
   const { token } = useContext(StoreContext);
   const [loading, setLoading] = useState(true);
   const spinner = document.getElementById('spinner');
-  if(spinner){
+  if (spinner) {
     setTimeout(() => {
       spinner.style.display = 'none'
       setLoading(false)
@@ -22,17 +22,18 @@ const App = () => {
   }
   return (
     <div>
-    <ToastContainer/>
-      {!loading &&(!token
-        ?<SigninPopUp />
-        :<>
-        <Navbar/>
-          <Routes>
-            <Route path='/' element={<Home />} />
-            <Route path='/upload' element={<Upload/>}/>
-            <Route path='/library' element={<Library/>}/>
-            <Route path='/ai' element={<ChatBot/>}/>
-          </Routes>
+      <ToastContainer />
+      {!loading && (!token
+        ? <SigninPopUp />
+        : <>{!loading &&
+          <>
+            (<Navbar />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/upload' element={<Upload />} />
+              <Route path='/library' element={<Library />} />
+              <Route path='/ai' element={<ChatBot />} />
+            </Routes>) </>}
         </>
       )}
     </div>
