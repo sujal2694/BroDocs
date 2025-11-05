@@ -42,12 +42,12 @@ const Upload = () => {
         }
     }
     return (
-        <div className='pt-[50px] w-[90vw] lg:w-[40vw] md:w-[70vw] h-[100vh] m-auto flex items-center justify-center flex-col p-10'>
+        <div className='pt-[50px] w-[90vw] lg:w-[40vw] md:w-[70vw] h-[100vh] m-auto flex items-center justify-center flex-col lg:p-10'>
             <Link to='/' className='w-full'><div className='w-full flex items-center gap-3 text-[16px] text-gray-500 mb-5'>
                 <i className='fa fa-arrow-left'></i>
                 <p>Back to Home</p>
             </div></Link>
-            <form onSubmit={onSubmit} className='bg-gray-700/20 border-2 border-gray-600/20 rounded-md p-5 w-full '>
+            <form onSubmit={onSubmit} className='bg-gray-700/20 border-2 border-gray-600/20 rounded-md p-2 lg:p-5 w-full '>
                 <div>
                     <div className='flex items-center gap-5'>
                         <div className='bg-blue-500 text-white text-[20px] p-3 rounded-md flex items-center justify-center'>
@@ -59,7 +59,7 @@ const Upload = () => {
                         </div>
                     </div>
 
-                    <div className='p-10 w-full'>
+                    <div className='lg:p-10 p-4 w-full'>
                         <div className='w-full mb-8'>
                             <p className='text-[18px] mb-3'>Title *</p>
                             <input className='border-2 border-gray-500/20 bg-gray-400/30 w-full h-[40px] pl-3 rounded-md outline-none focus:border-gray-300/90' type="text" name='name' value={data.name} onChange={onChangehandler} placeholder='e.g. Introduction of calculus' required />
