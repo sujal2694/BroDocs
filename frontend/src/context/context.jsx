@@ -8,7 +8,7 @@ export const StoreContext = createContext(null);
 
 const StoreContextProvider = (props) => {
 
-  const url = "http://localhost:4000"
+  const url = "https://brodocs-backend.onrender.com"
   const [currState, setCurrState] = useState("Sign Up");
   const [token, setToken] = useState("");
   const [docs, setDocs] = useState("docs");
