@@ -58,7 +58,11 @@ const ChatBot = () => {
                                 </>
                                 : <div className='w-[90%] flex items-start flex-wrap lg:flex-nowrap gap-2 lg:gap-4 mb-[100px] lg:mb-0'>
                                     <i className='bx bxs-sparkles text-[30px] text-blue-400 p-2'></i>
-                                    <p className='mt-2 p-3 bg-gray-600/20 rounded-lg'>{resultData}</p>
+                                    <div
+                                        className='mt-2 mb-[150px] p-3 bg-gray-600/20 text-gray-300/90 rounded-lg'
+                                        dangerouslySetInnerHTML={{ __html: resultData }}
+                                    >
+                                    </div>
                                 </div>
                             }
 
@@ -67,8 +71,8 @@ const ChatBot = () => {
                 }
             </div>
             <div className='w-[95%] lg:w-[50%] m-auto mt-[50px] mb-2 lg:mb-10 fixed bottom-0 lg:bottom-4 left-[2.5%] lg:left-[25%] '>
-                <div className='w-full flex items-center gap-5 bg-gray-950/95 border-2 border-gray-500/30 rounded-md hover:border-blue-500/80 hover:shadow-[0_0_5px_1px_#73A4FF] shadow-[0_0_5px_1px_#9d9d9d] p-2 '>
-                    <input className='w-full h-[2vh] bg-transparent border-none pl-3 outline-none' type="text" onChange={(e) => setInput(e.target.value)} value={input} placeholder='Enter prompt here' />
+                <div className='w-full h-[6vh] flex items-center gap-5 bg-gray-950/95 border-2 border-gray-500/30 rounded-md hover:border-blue-500/80 hover:shadow-[0_0_5px_1px_#73A4FF] shadow-[0_0_5px_1px_#9d9d9d] p-2 '>
+                    <input className='w-full h-full bg-transparent border-none pl-3 outline-none' type="text" onChange={(e) => setInput(e.target.value)} value={input} placeholder='Enter prompt here' />
                     <button onClick={() => { onSent() }} className='bg-blue-400/80 px-3 py-2 text-[20px] rounded-lg hover:bg-blue-500/70 '>
                         <i className='fa fa-paper-plane'></i>
                     </button>

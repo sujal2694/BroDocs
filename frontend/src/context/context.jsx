@@ -48,33 +48,61 @@ const StoreContextProvider = (props) => {
   }
 
 
-  const onSent = async (prompt) => {
+ const onSent = async (prompt) => {
+  const finalPrompt = prompt || input;
+  if (!finalPrompt.trim()) return;
 
-    setInput("")
-    setResultData("")
-    setResult(true)
-    setLoading(true)
-    setRecentPrompt(input)
-    setPrevPrompts(prev=>[...prev,input])
-    const response = await main(input)
-    let responseArray = response.split("**");
-    let newResponse;
-    for (let i = 0; i < responseArray.length; i++) {
-      if (i === 0 || i % 2 !== 1) {
-        newResponse += responseArray[i]
-      }
-      else {
-        newResponse += "<b>"+responseArray[i]+"</b>"
-      }
+  setInput("");
+  setResultData("");
+  setResult(true);
+  setLoading(true);
+  setRecentPrompt(finalPrompt);
+  setPrevPrompts((prev) => [...prev, finalPrompt]);
+
+  try {
+    const response = await main(finalPrompt);
+    if (!response) {
+      setResultData("No response received.");
+      setLoading(false);
+      return;
     }
-    let newResponse2 = newResponse.split("*").join("</br>")
-    let newResponseArray = newResponse2.split(" ");
-    for (let i=0; i < newResponseArray.length; i++){
-      const nextWord = newResponseArray[i]
-      delayPara(i,nextWord+" ")
+
+    let formattedResponse = response.trim();
+   
+    // Fix: Use .+? for non-greedy matching, handle nested bold/italic properly
+    // Process bold first (double asterisks)
+    formattedResponse = formattedResponse.replace(/\*\*(.+?)\*\*/g, "<b>$1</b>");
+    
+    // Then process italic (single asterisks)
+    formattedResponse = formattedResponse.replace(/\*(.+?)\*/g, "<i>$1</i>");
+
+    //numbers bold
+    formattedResponse = formattedResponse.replace(/(\d+)/g, "<b>$1</b>");
+
+    // Remove * from response
+    // formattedResponse = formattedResponse.replace(/\*/g, " ")
+ 
+    // Replace newlines with <br/>
+    formattedResponse = formattedResponse.replace(/\n/g, "<br/>");
+ 
+    // Add space after bullets
+    formattedResponse = formattedResponse.replace(/\* /g, "<span style='font-size: 30px'>• </span>");
+
+    // Animate word by word
+    const words = formattedResponse.split(" ");
+    for (let i = 0; i < words.length; i++) {
+      await delayPara(i, words[i] + " ");
     }
-    setLoading(false)
+
+  } catch (error) {
+    console.error("Error during onSent:", error);
+    setResultData("Something went wrong. Please try again.");
+    setLoading(false); // Ensure loading is turned off on error
+  } finally {
+    setLoading(false); // This will run after animation completes
   }
+};
+
 
   
 

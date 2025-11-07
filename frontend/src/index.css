@@ -32,6 +32,12 @@ a {
   color: inherit;
 }
 
+b{
+  font-size: 20px;
+  letter-spacing: 0.3px;
+  color: #fff;
+}
+
 @layer utilities {
   .loader {
     width: 100%;
@@ -76,7 +82,7 @@ a {
     display: none;
   }
 
-  .que-animation{
+  .que-animation {
     border: none;
     background-color: #6e9bfd;
     background: linear-gradient(to right, #6e9bfd, #9b75f3, #6e9bfd);
@@ -85,12 +91,18 @@ a {
   }
 
   @keyframes que-anim {
-    0%{
+    0% {
       background-position: -400px 0px;
     }
-    100%{
+
+    100% {
       background-position: 400px 0px;
     }
+  }
+
+  .ai-response b {
+    color: #ffffff;
+    font-weight: 700;
   }
 
 }
