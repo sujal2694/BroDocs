@@ -9,6 +9,10 @@
   --sign-in-background: #212529;
 }
 
+::-webkit-scrollbar{
+  display: none;
+}
+
 
 * {
   margin: 0;
@@ -47,9 +51,10 @@ b{
   }
 
   .dot {
-    width: 10px;
-    height: 10px;
-    background-color: #6e9bfd;
+    width: 13px;
+    height: 13px;
+    background-image: linear-gradient(to right, #090dee, #789ef0, #071de6);
+    background-size: 50px 50px;
     border-radius: 50%;
     animation: loader-animation 1.4s infinite ease-in-out;
   }
@@ -80,24 +85,6 @@ b{
 
   .no-scrollbar::-webkit-scrollbar {
     display: none;
-  }
-
-  .que-animation {
-    border: none;
-    background-color: #6e9bfd;
-    background: linear-gradient(to right, #6e9bfd, #9b75f3, #6e9bfd);
-    background-size: 400px 50px;
-    animation: que-anim 3s infinite linear;
-  }
-
-  @keyframes que-anim {
-    0% {
-      background-position: -400px 0px;
-    }
-
-    100% {
-      background-position: 400px 0px;
-    }
   }
 
   .ai-response b {

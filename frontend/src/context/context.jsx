@@ -86,7 +86,7 @@ const StoreContextProvider = (props) => {
     formattedResponse = formattedResponse.replace(/\n/g, "<br/>");
  
     // Add space after bullets
-    formattedResponse = formattedResponse.replace(/\* /g, "<span style='font-size: 30px'>• </span>");
+    formattedResponse = formattedResponse.replace(/\* /g, "<span style='font-size: 30px; padding-left: 20px'>• </span>");
 
     // Animate word by word
     const words = formattedResponse.split(" ");

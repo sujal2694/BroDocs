@@ -12,7 +12,7 @@ const ChatBot = () => {
                 <p>Back to Home</p>
             </div></Link>
 
-            <div>
+            <div className='w-full'>
                 {!result
                     ? <div className='w-[90vw] lg:w-[70vw] px-5 lg:mt-[100px] mt-[40px] '>
                         <div className='w-full'>
@@ -41,10 +41,10 @@ const ChatBot = () => {
                             </div>
                         </div>
                     </div>
-                    : <div>
-                        <div className='w-[90vw] lg:w-[70vw] m-auto'>
+                    : <div className='w-full'>
+                        <div className='w-[90vw] lg:w-[60vw] m-auto'>
                             <div className='my-[10px] lg:my-[40px] w-full flex items-center justify-end'>
-                                <p className=' w-fit py-2 px-3 rounded-md que-animation '>{recentPrompt}</p>
+                                <p className=' w-fit py-2 px-3 rounded-md que-animation bg-gray-500/40 '>{recentPrompt}</p>
                             </div>
                             {loading
                                 ? <>
@@ -56,10 +56,10 @@ const ChatBot = () => {
                                         </div>
                                     </div>
                                 </>
-                                : <div className='w-[90%] flex items-start flex-wrap lg:flex-nowrap gap-2 lg:gap-4 mb-[100px] lg:mb-0'>
+                                : <div className='w-[100%] flex items-start flex-wrap lg:flex-nowrap gap-2 lg:gap-4 lg:mb-0'>
                                     <i className='bx bxs-sparkles text-[30px] text-blue-400 p-2'></i>
                                     <div
-                                        className='mt-2 mb-[150px] p-3 bg-gray-600/20 text-gray-300/90 rounded-lg'
+                                        className='mt-1 mb-[150px] p-3 text-gray-300/90 rounded-lg'
                                         dangerouslySetInnerHTML={{ __html: resultData }}
                                     >
                                     </div>
@@ -71,9 +71,9 @@ const ChatBot = () => {
                 }
             </div>
             <div className='w-[95%] lg:w-[50%] m-auto mt-[50px] mb-2 lg:mb-10 fixed bottom-0 lg:bottom-4 left-[2.5%] lg:left-[25%] '>
-                <div className='w-full h-[6vh] flex items-center gap-5 bg-gray-950/95 border-2 border-gray-500/30 rounded-md hover:border-blue-500/80 hover:shadow-[0_0_5px_1px_#73A4FF] shadow-[0_0_5px_1px_#9d9d9d] p-2 '>
+                <div className='w-full h-[8vh] lg:h-[6vh] flex items-center gap-5 bg-gray-950/95 border-2 border-gray-500/30 rounded-md hover:border-blue-500/80 hover:shadow-[0_0_5px_1px_#73A4FF] shadow-[0_0_5px_1px_#9d9d9d] p-2 '>
                     <input className='w-full h-full bg-transparent border-none pl-3 outline-none' type="text" onChange={(e) => setInput(e.target.value)} value={input} placeholder='Enter prompt here' />
-                    <button onClick={() => { onSent() }} className='bg-blue-400/80 px-3 py-2 text-[20px] rounded-lg hover:bg-blue-500/70 '>
+                    <button onClick={() => { onSent() }} className='bg-blue-400/80 px-2 py-1 lg:px-3 lg:py-2 text-[18px] lg:text-[20px] rounded-lg hover:bg-blue-500/70 '>
                         <i className='fa fa-paper-plane'></i>
                     </button>
                 </div>

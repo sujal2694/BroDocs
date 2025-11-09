@@ -8,6 +8,7 @@ import { ToastContainer } from 'react-toastify'
 import Upload from './Pages/Upload'
 import Library from './Pages/Library'
 import ChatBot from './components/ChatBot'
+import NotFound from './components/NotFound'
 
 
 const App = () => {
@@ -32,6 +33,7 @@ const App = () => {
             <Route path='/upload' element={<Upload />} />
             <Route path='/library' element={<Library />} />
             <Route path='/ai' element={<ChatBot />} />
+            <Route path='*' element={<NotFound/>}/>
           </Routes>
         </>
       )}
