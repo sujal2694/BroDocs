@@ -40,7 +40,7 @@ const SigninPopUp = () => {
         <div>
             <LoginBar />
             <div className=' absolute top-0 left-0 w-[100vw] h-[100vh] flex items-center justify-center flex-col z-10 '>
-                < form onSubmit={onLogin} className='relative flex items-center flex-col gap-10 rounded-[8px] p-5 w-[80vw] md:w-[50vw] lg:w-[25vw] shadow-[0_0_2px_1px_#5e5e5e] bg-gradient-to-br from-blue-500/20 via-blue-400/20 to-orange-400/20 text-white border-2 border-gray-100/10 ' >
+                < form onSubmit={onLogin} className='card relative flex items-center flex-col gap-10 rounded-[8px] p-5 w-[80vw] md:w-[50vw] lg:w-[25vw] shadow-[0_0_2px_1px_#5e5e5e] bg-inherit text-white border-2 border-gray-100/10 ' >
                     <div className='flex items-center flex-col w-full'>
                         <div className='w-full py-2 my-3 text-center flex items-center justify-center'>
                             <h2 className='text-[40px] font-semibold'>{currState}</h2>
@@ -57,10 +57,10 @@ const SigninPopUp = () => {
                                         <input type="password" name='password' value={data.password} onChange={onChangeHandler} placeholder='Password' className='bg-transparent border-2 border-gray-600/50 mb-3 w-full h-full rounded-[5px] pl-3 placeholder:text-[16px] text-[16px] ' required />
                                     </div></>)
                                 : (<><div className='h-[50px] w-[95%] mt-5'>
-                                    <input type="email" name='email' value={data.email} onChange={onChangeHandler} placeholder='Email' className='bg-transparent border-2 border-gray-900/50 mb-3 w-full h-full rounded-[5px] pl-3 placeholder:text-[16px] text-[16px] ' required />
+                                    <input type="email" name='email' value={data.email} onChange={onChangeHandler} placeholder='Email' className='bg-transparent border-2 border-gray-600/50 mb-3 w-full h-full rounded-[5px] pl-3 placeholder:text-[16px] text-[16px] ' required />
                                 </div>
                                     <div className='h-[50px] w-[95%] mt-5'>
-                                        <input type="password" name='password' value={data.password} onChange={onChangeHandler} placeholder='Password' className='bg-transparent border-2 border-gray-900/50 mb-3 w-full h-full rounded-[5px] pl-3 placeholder:text-[16px] text-[16px] ' required />
+                                        <input type="password" name='password' value={data.password} onChange={onChangeHandler} placeholder='Password' className='bg-transparent border-2 border-gray-600/50 mb-3 w-full h-full rounded-[5px] pl-3 placeholder:text-[16px] text-[16px] ' required />
                                     </div></>)
                             }
                         </div>
