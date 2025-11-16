@@ -17,7 +17,7 @@ const Library = () => {
           <span className='ml-3 text-[16px] text-gray-500'>Browse and download study materials</span>
         </div>
         <div className='w-full flex items-center justify-end'>
-          <button onClick={()=>getData()} className='border border-black rounded-md bg-gray-500 text-sm px-3 py-2'>Refresh <i className='fa fa-refresh text-sm'></i></button>
+          <button onClick={()=>getData()} className='border border-black rounded-md bg-gray-500 text-sm px-3 py-2 hover:bg-gray-600'>Refresh <i className='fa fa-refresh text-sm'></i></button>
         </div>
       </div>
       <hr className='h-[1px] my-3 border-none bg-gray-400' />
