@@ -6,7 +6,7 @@ const Library = () => {
   const { url, Files, getData } = useContext(StoreContext);
 
   return (
-    <div className='lg:h-[100vh] pt-[90px] w-[70vw] m-auto mb-8'>
+    <div className='lg:h-[100vh] pt-[90px] w-[90vw] lg:w-[80vw] md:w-[80vw] sm:w-[90vw] 2xl:w-[70vw] m-auto mb-8'>
       <Link to='/' className='w-full'><div className='w-full flex items-center gap-3 text-[16px] text-gray-500 mb-5'>
         <i className='fa fa-arrow-left'></i>
         <p>Back to Home</p>
