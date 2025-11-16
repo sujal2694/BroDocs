@@ -128,6 +128,7 @@ const StoreContextProvider = (props) => {
     input,
     setInput,
     setResult,
+    getData
   };
 
 
