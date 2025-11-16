@@ -22,10 +22,10 @@ const Library = () => {
       </div>
       <hr className='h-[1px] my-3 border-none bg-gray-400' />
 
-      <div className='w-[95%] grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 ml-[20px]'>
+      <div className='w-[95%] grid grid-cols-3 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 2xl:ml-[20px] lg:ml-[20px]'>
         {Files.map((item, index) => {
           return (
-            <div key={index} className='md:col-span-1 sm:col-span-3 col-span-3 bg-gray-600/30 border-2 border-gray-300/20 2xl:p-5 lg:p-5 rounded-md hover:shadow-[0_5px_10px_0_#3d3c3c] ' >
+            <div key={index} className='md:col-span-1 sm:col-span-3 col-span-3 bg-gray-600/30 border-2 border-gray-300/20 p-5 rounded-md hover:shadow-[0_5px_10px_0_#3d3c3c] ' >
               <div>
                 <div className='flex items-center justify-start flex-col'>
                   <p className='text-xl font-semibold w-full text-gray-200 mb-3'>{item.name}</p>
