@@ -17,21 +17,21 @@ const ChatBot = () => {
                     ? <div className='w-[90vw] lg:w-[70vw] px-5 lg:mt-[100px] mt-[40px] '>
                         <div className='w-full'>
                             <div>
-                                <p className='text-5xl lg:text-7xl w-fit bg-gradient-to-r from-blue-500 via-indigo-500 to-orange-700 bg-clip-text text-transparent font-[600]'>Hello, User.</p>
+                                <p className='text-5xl lg:text-7xl w-fit bg-gradient-to-r from-blue-500 via-cyan-400 to-orange-600 bg-clip-text text-transparent font-[600]'>Hello, User.</p>
                                 <p className='text-3xl lg:text-5xl w-fit text-gray-700/90 font-[600] mt-3'>How can I help you today?</p>
                             </div>
 
                             <div className='mt-[100px] w-full flex items-center justify-around lg:flex-nowrap flex-wrap gap-5'>
                                 <div className='w-[250px] bg-blue-400/10 h-[200px] p-5 rounded-[15px] text-[15px] relative'>
-                                    <p>Suggest beautiful places to see an on upcoming road trip</p>
+                                    <p>Suggest a road map for the study or daily routine plan</p>
                                     <i className='absolute bottom-3 right-3 bg-gray-500/40 h-5 w-5 p-5 flex items-center justify-center rounded-full text-[16px] fa fa-compass'></i>
                                 </div>
                                 <div className='w-[250px] bg-blue-400/10 h-[200px] p-5 rounded-[15px] text-[15px] relative'>
-                                    <p>Briefly summarise this concept; urbon planning</p>
+                                    <p>Briefly summarise this concept; reciprocal motion</p>
                                     <i className='absolute bottom-3 right-3 bg-gray-500/40 h-5 w-5 p-5 flex items-center justify-center rounded-full text-[16px] fa fa-lightbulb'></i>
                                 </div>
                                 <div className='w-[250px] bg-blue-400/10 h-[200px] p-5 rounded-[15px] text-[15px] relative'>
-                                    <p>Brainstrom team bbonding activities for our work retreat</p>
+                                    <p>Brainstrom team bonding activities for our work retreat</p>
                                     <i className='absolute bottom-3 right-3 bg-gray-500/40 h-5 w-5 p-5 flex items-center justify-center rounded-full text-[16px] fa fa-message'></i>
                                 </div>
                                 <div className='w-[250px] bg-blue-400/10 h-[200px] p-5 rounded-[15px] text-[15px] relative'>
