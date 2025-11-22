@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react'
 import Navbar from './components/Navbar'
-import SigninPopUp from './components/SigninPopUp'
 import { StoreContext } from './context/context'
 import Home from './Pages/Home'
 import { Route, Routes } from 'react-router-dom'
@@ -9,6 +8,7 @@ import Upload from './Pages/Upload'
 import Library from './Pages/Library'
 import ChatBot from './components/ChatBot'
 import NotFound from './components/NotFound'
+import SigninpopUp from './components/SigninPopUp'
 
 
 const App = () => {
@@ -25,7 +25,7 @@ const App = () => {
     <div>
       <ToastContainer />
       {!loading && (!token
-        ? <SigninPopUp />
+        ? <SigninpopUp />
         : <>
           <Navbar />
           <Routes>

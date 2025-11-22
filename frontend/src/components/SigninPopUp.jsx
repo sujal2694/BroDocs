@@ -39,7 +39,7 @@ const SigninPopUp = () => {
     return (
         <div>
             <LoginBar />
-            <div className=' absolute top-0 left-0 w-[100vw] h-[100vh] flex items-center justify-center flex-col z-10 '>
+            <div className=' absolute top-0 left-0 w-[100vw] h-[100vh] bg-gradient-to-br from-blue-500/20 via-blue-400/20 to-orange-500/20 flex items-center justify-center flex-col z-10 '>
                 < form onSubmit={onLogin} className='card relative flex items-center flex-col gap-10 rounded-[8px] p-5 w-[80vw] md:w-[50vw] lg:w-[25vw] shadow-[0_0_2px_1px_#5e5e5e] bg-inherit text-white border-2 border-gray-100/10 ' >
                     <div className='flex items-center flex-col w-full'>
                         <div className='w-full py-2 my-3 text-center flex items-center justify-center'>
